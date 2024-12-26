@@ -1,0 +1,10 @@
+langchain_community
+streamlit
+base64
+os
+langchain_text_splitters
+tiktoken
+langchain_ollama
+faiss
+langchain
+langchain_core
