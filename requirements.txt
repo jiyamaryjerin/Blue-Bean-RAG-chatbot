@@ -1,5 +1,5 @@
 langchain_community==0.3.8
-streamlit
+streamlit==1.40.2
 base64
 os
 langchain_text_splitters
