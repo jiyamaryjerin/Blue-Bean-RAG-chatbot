@@ -37,7 +37,7 @@ div[data-baseweb="base-input"] {
 </style>
 """
 st.markdown(input_style, unsafe_allow_html=True)
-loader = PyMuPDFLoader("https://github.com/jiyamaryjerin/Blue-Bean-RAG-chatbot/tree/main/PDF/3061_G.pdf")
+loader = PyMuPDFLoader(r"PDF/3061_G.pdf")
 
 docs = loader.load()
 doc = docs[0]
