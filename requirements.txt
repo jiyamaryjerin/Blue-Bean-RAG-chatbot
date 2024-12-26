@@ -1,4 +1,4 @@
-langchain_community
+langchain_community==0.3.8
 streamlit
 base64
 os
