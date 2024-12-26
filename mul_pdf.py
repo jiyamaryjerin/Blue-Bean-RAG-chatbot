@@ -37,7 +37,7 @@ div[data-baseweb="base-input"] {
 </style>
 """
 st.markdown(input_style, unsafe_allow_html=True)
-loader = PyMuPDFLoader(r"C:\Users\Admin\Desktop\scholarship_chatbot_final\PDF\sclor\3061_G.pdf")
+loader = PyMuPDFLoader(r"PDF/3061_G.pdf")
 
 docs = loader.load()
 doc = docs[0]
