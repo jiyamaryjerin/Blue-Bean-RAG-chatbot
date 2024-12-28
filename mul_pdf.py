@@ -79,7 +79,7 @@ from langchain_ollama import OllamaEmbeddings
 import faiss
 from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
-embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url="http://localhost:8000")
+embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url="http://localhost:11434")
 
 single_vector = embeddings.embed_query("this is some text data")
 #print(len(single_vector))
