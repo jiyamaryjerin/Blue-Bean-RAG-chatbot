@@ -2,7 +2,7 @@ from langchain_community.document_loaders import PyMuPDFLoader
 import streamlit as st
 import base64
 import os
-os.environ["STREAMLIT_SERVER_PORT"] = "8503"
+os.environ["STREAMLIT_SERVER_PORT"] = "8501"
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
