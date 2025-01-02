@@ -1,7 +1,6 @@
 from langchain_community.document_loaders import PyMuPDFLoader
 import streamlit as st
 import base64
-import os
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -78,7 +77,7 @@ from langchain_ollama import OllamaEmbeddings
 import faiss
 from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
-embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url="https://0493-152-58-209-218.ngrok-free.app")
+embeddings = OllamaEmbeddings(model='nomic-embed-text', base_url="http://localhost:11434")
 
 single_vector = embeddings.embed_query("this is some text data")
 #print(len(single_vector))
@@ -99,7 +98,7 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
 
 from langchain_ollama import ChatOllama
-model = ChatOllama(model="llama3.2", base_url="https://0493-152-58-209-218.ngrok-free.app")
+model = ChatOllama(model="llama3.2", base_url="http://localhost:11434")
 prompt = hub.pull("rlm/rag-prompt")
 prompt = """
     You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question.
@@ -135,7 +134,7 @@ def generate_response(input_text):
     | model
     | StrOutputParser()
     )
-    model = ChatOllama(model="llama3.2", base_url="https://0493-152-58-209-218.ngrok-free.app")
+    model = ChatOllama(model="llama3.2", base_url="http://localhost:11434/")
 
     response = model.invoke(input_text)
 
@@ -171,7 +170,7 @@ with st.popover("Frequently Asked Questions"):
     
 
 def generate_response(input_text):
-    model = ChatOllama(model="llama3.2", base_url="https://0493-152-58-209-218.ngrok-free.app")
+    model = ChatOllama(model="llama3.2", base_url="http://localhost:11434/")
 
     response = model.invoke(input_text)
 
@@ -190,4 +189,4 @@ st.write("## Chat History")
 for chat in reversed(st.session_state['chat_history']):
     st.write(f"**You**: {chat['user']}")
     st.write(f"**Blue bean**: {chat['ollama']}")
-    st.write("---")
+    st.write("---")  
